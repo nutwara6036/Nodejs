@@ -1,0 +1,14 @@
+{
+  "Chanok":{
+    "id" : "Chanok",
+    "pass" : "123456",
+    "name" : "Chanok wongthinpa",
+    "authorization" : "user"
+  },
+  "admin":{
+    "id" : "admin",
+    "pass" : "1234",
+    "name" : "admin",
+    "authorization" : "admin"
+  }
+}
