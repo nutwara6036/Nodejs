@@ -59,8 +59,14 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 <script>
     $(function () {
+
         var socket = io();
         $('form').submit(function (e) {
             e.preventDefault(); // prevents page reloading
@@ -68,15 +74,16 @@
             $('#m').val('');
             return false;
         });
+
         socket.on('chat message', function (msg) {
-            $('#messages').append($('<ul><li>').text(msg));
+            $('#messages').append($('</pre><ul><li>').text(msg));
             var json = $.parseJSON(msg);
             var timestamp = (new Date(json.timeCreated)).getTime();
             var seriesModule1 = chartLine.series[0];
-            var x = timestamp; // UTC time
-            var y = json.machine.temperature;
+            var x = timestamp + 07; // UTC time
+            var y = json.machine.temperature; // get json
             seriesModule1.addPoint([x, y], true, true);
-        });
+        })
 
         var chartLine = Highcharts.chart('charts-1', {
             chart: {
@@ -139,10 +146,15 @@
             }]
         });
     });
+
+
+    // $(function () {
+
+    // });
 </script>
 
 <div id="charts-1"></div>
-<h1>test</h1>
+<!-- <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div> -->
 
 </body>
 

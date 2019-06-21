@@ -26,6 +26,6 @@ io.on('connection', function (socket) {
         
     })
 });
-//{"machine":{"temperature":21.810507137356563},"timeCreated":"2018-01-06T23:55:56.1058921Z"}
+//{"machine":{"temperature":100.810507137356563},"timeCreated":"2019-11-06T23:55:56.1058921Z"}
 
 http.listen(port, () => console.log(`Example app listening on port ${port}!`))
