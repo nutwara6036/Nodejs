@@ -12,13 +12,12 @@ MongoClient.connect(url, function (err, db) {
         console.log(result);
 
         result.forEach((index, i) => {
+            console.log(index.id);
             console.log(index.name);
-            console.log(index.type);
             
-            index.skills.forEach((skill, i) => {
-               console.log(skill);
-            })
-            
+            // index.skills.forEach((skill, i) => {
+            //    console.log(skill);
+            // })
         })
 
         http.createServer((req, res) => {
