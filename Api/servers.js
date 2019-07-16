@@ -15,7 +15,7 @@ setInterval(() => {
 
             var options = {
                 method: 'POST',
-                url:'',
+                url: '',
                 headers: {
                     'Postman-Token': 'dd',
                     'cache-control': 'no-cache',
@@ -28,7 +28,7 @@ setInterval(() => {
                 json: true
             };
 
-            request(options, function (error, response, body) {
+            request(options, function(error, response, body) {
                 if (error) throw new Error(error);
                 console.log(body);
             });
