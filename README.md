@@ -18,17 +18,29 @@ Example
 # Reference
 -----------------------------------------
 Name API.com 
-🔎 search
+- 🔎 search
 - https://www.name.com/api-docs/
 
 MongoDB
-🔎 search
+- 🔎 search
 - http://mongodb.github.io
 
 Node.js MongoDB Driver API
-🔎 search
+- 🔎 search
 - http://mongodb.github.io/node-mongodb-native/3.0/api/
 
 Express
-🔎 search
-https://expressjs.com/en/starter/hello-world.html
+- 🔎 search
+- https://expressjs.com/en/starter/hello-world.html
+
+Node Js
+- 🔎 search
+- https://nodejs.org/api/synopsis.html
+
+Socket.io
+- 🔎 search
+- https://socket.io/get-started/chat/
+
+javascript.info
+- 🔎 search
+- https://javascript.info/?fbclid=IwAR195YbvLlcZEbOXenGaOHmnOuxKuDD_N2JJAbFTmWnEmwFSVzyRiaMRT0c
