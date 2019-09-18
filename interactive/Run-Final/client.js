@@ -1,6 +1,11 @@
 var port = 8000;
 const client = require("socket.io-client");
-var socket = client.connect('http://localhost:' + port);
+var socket = client.connect('http://localhost:' + port, {
+    reconnection: true,
+    reconnectionDelay: 1000,
+    reconnectionDelayMax: 5000,
+    reconnectionAttempts: Infinity
+});
 
 
 setInterval(() => {
