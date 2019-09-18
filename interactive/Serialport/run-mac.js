@@ -16,16 +16,11 @@ function trig(params) {
     if (params == 0) {
         if (state == 0) {
             robot.keyTap("z");
-            console.log("???");
-            state = 1;
         } else if (state == 2) {
             robot.keyTap("z");
-            robot.keyTap("x");
-            state = 0;
+
         } else {
             robot.keyTap("x");
-            console.log("???");
-            state = 2;
         }
 
     }

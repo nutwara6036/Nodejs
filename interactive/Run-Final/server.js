@@ -1,6 +1,6 @@
 var port = 8000;
-const server = require("socket.io")(port);
-var keyboard = require('node-key-sender');
+const server = require("./node_modules/socket.io")(port);
+var keyboard = require('./node_modules/node-key-sender');
 let check = false;
 server.on("connection", (socket) => {
     console.info(`Client connected [id=${socket.id}]`);
