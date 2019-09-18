@@ -1,4 +1,12 @@
-const io = require("socket.io-client"),
-    ioClient = io.connect("http://localhost:8000");
+var port = 8000;
+const client = require("socket.io-client");
+var socket = client.connect('http://localhost:' + port);
 
-ioClient.on("seq-num", (msg) => console.info(msg));
+
+setInterval(() => {
+    socket.emit("topic", { Log: "1" });
+}, 1000);
+
+socket.on("topic", function(data) {
+    console.log(data.Log);
+});
