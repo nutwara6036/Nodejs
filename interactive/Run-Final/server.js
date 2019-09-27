@@ -7,27 +7,27 @@ server.on("connection", (socket) => {
 
     socket.on("topic", (msg) => {
         console.log(msg);
-        let time = new Date();
-        if (msg.Log === '1') {
-            console.log(time.toLocaleTimeString() + " : 1");
-            //keyboard.sendKey('a');
-            check = true;
-        }
-        if (msg.Log === "2") {
-            console.log(time.toLocaleTimeString() + " : 2");
-            //keyboard.sendKey();
-            check = true;
+        //     let time = new Date();
+        //     if (msg.Log === '1') {
+        //         console.log(time.toLocaleTimeString() + " : 1");
+        //         //keyboard.sendKey('a');
+        //         check = true;
+        //     }
+        //     if (msg.Log === "2") {
+        //         console.log(time.toLocaleTimeString() + " : 2");
+        //         //keyboard.sendKey();
+        //         check = true;
 
-        }
-        if (msg.Log === "3") {
-            console.log(time.toLocaleTimeString() + " : 3");
-            //keyboard.sendKey();
-            check = true;
-        }
-        if (check) {
-            socket.emit("topic", { Log: "success" });
+        //     }
+        //     if (msg.Log === "3") {
+        //         console.log(time.toLocaleTimeString() + " : 3");
+        //         //keyboard.sendKey();
+        //         check = true;
+        //     }
+        //     // if (check) {
+        //     //     socket.emit("topic", { Log: "success" });
 
-        }
+        //     // }
     });
 
     // Ex. Sending side(package from server)

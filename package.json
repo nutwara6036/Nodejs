@@ -26,6 +26,6 @@
     "upper-case": "^1.1.3"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.2"
   }
 }

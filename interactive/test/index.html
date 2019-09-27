@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<title>Web reset</title>
+<style>
+    .bt {
+        border-radius: 10px;
+        padding: 10px;
+        color: brown;
+    }
+</style>
+
+<head>
+    <script src='//code.jquery.com/jquery-1.7.2.min.js'></script>
+    <script src='//192.168.0.4:3484/socket.io/socket.io.js'></script>
+    <script>
+        var socket = io.connect('//192.168.0.4:3484');
+        // send reset in web
+        $(document).ready(function() {
+                $("#button").click(function() {
+                    socket.emit('web', "Reset");
+                })
+            })
+            // send connect 
+        socket.on('welcome', function(data) {
+            $('#messages').append('<li>' + data.message + '</li>');
+        });
+
+        // Sub topic reset 
+        socket.on('reset', function(data) {
+            console.log(data);
+            $('#messages').append('<li>' + data.message + '</li>');
+        });
+
+        // Sub topic time
+        socket.on('time', function(data) {
+            console.log(data);
+            $('#messages').append('<li>' + data.time + '</li>');
+        });
+
+        socket.on('error', function() {
+            console.error(arguments)
+        });
+        socket.on('message', function() {
+            console.log(arguments)
+        });
+    </script>
+</head>
+
+<body>
+    <button type="button" id='button' class="bt">Send Message to Arduino</button>
+    <ul id='messages'></ul>
+
+</body>
+
+</html>
