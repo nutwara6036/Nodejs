@@ -1,4 +1,4 @@
-var port = 8000;
+var port = 3484;
 const client = require("socket.io-client");
 var socket = client.connect('http://localhost:' + port, {
     reconnection: true,
@@ -9,7 +9,7 @@ var socket = client.connect('http://localhost:' + port, {
 
 
 setInterval(() => {
-    socket.emit("topic", { Log: "1" });
+    socket.emit("topic", { "message": "1" });
 }, 1000);
 
 socket.on("topic", function(data) {
