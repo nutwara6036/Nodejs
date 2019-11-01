@@ -18,15 +18,15 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
     function bodyMassIndex(agent) {
 
-        let number = request.body.queryResult.parameters.number;
-        // const numberParam = agent.parameters.number;
-        // const number = numberParam;
+        //let number = request.body.queryResult.parameters.number;
+        const numberParam = agent.parameters.number;
+        const number = numberParam;
 
-        //agent.add(`OK` + number);
+        agent.add(`OK` + number);
 
         return admin.database().ref("/switch").update({ switch1: number }).then(snapshot => {
             //agent.add(snapshot.val());
-            console.log('ok');
+            console.log('database write sucessful!!');
         });
 
     }
