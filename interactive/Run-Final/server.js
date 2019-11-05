@@ -15,12 +15,23 @@ server.on("connection", (socket) => {
         }
         if (msg.message === "2") {
             console.log(time.toLocaleTimeString() + " : 2");
-            keyboard.sendKey();
-
+            keyboard.sendKey('');
         }
         if (msg.message === "3") {
             console.log(time.toLocaleTimeString() + " : 3");
-            keyboard.sendKey('k');
+            keyboard.sendKey('');
+        }
+        if (msg.message === "4") {
+            console.log(time.toLocaleTimeString() + " : 3");
+            keyboard.sendKey('');
+        }
+        if (msg.message === "5") {
+            console.log(time.toLocaleTimeString() + " : 3");
+            keyboard.sendKey('');
+        }
+        if (msg.message === "6") {
+            console.log(time.toLocaleTimeString() + " : 3");
+            keyboard.sendKey('');
         }
         socket.emit("topic", { accept: "sync" });
     });
