@@ -22,15 +22,15 @@ server.on("connection", (socket) => {
             keyboard.sendKey('');
         }
         if (msg.message === "4") {
-            console.log(time.toLocaleTimeString() + " : 3");
+            console.log(time.toLocaleTimeString() + " : 4");
             keyboard.sendKey('');
         }
         if (msg.message === "5") {
-            console.log(time.toLocaleTimeString() + " : 3");
+            console.log(time.toLocaleTimeString() + " : 5");
             keyboard.sendKey('');
         }
         if (msg.message === "6") {
-            console.log(time.toLocaleTimeString() + " : 3");
+            console.log(time.toLocaleTimeString() + " : 6");
             keyboard.sendKey('');
         }
         socket.emit("topic", { accept: "sync" });
