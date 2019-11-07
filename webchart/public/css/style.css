@@ -1,0 +1,7 @@
+.container {
+    min-width: 210px;
+    max-width: 1200px;
+    height: 400px;
+    width: 800px;
+    margin: 0 auto
+}

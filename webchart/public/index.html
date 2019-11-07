@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>การใช้งาน Highcharts JS With PHP MySQL</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- hight chart -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+    <h1>ข้อมูลทดสอบ</h1>
+
+    <div class="container" id="container"></div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            setInterval(function() {
+
+                // $.getJSON("http://canvasjs.com/data/gallery/php/bitcoin-price.json", function(data) {
+
+                seriesData = body;
+                console.log(data);
+
+                Highcharts.chart('container', {
+                    title: {
+                        text: 'Solar Employment Growth by Sector, 2010-2016'
+                    },
+
+                    subtitle: {
+                        text: 'Source: thesolarfoundation.com'
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: 'Number of Employees'
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle'
+                    },
+
+                    plotOptions: {
+                        series: {
+                            label: {
+                                connectorAllowed: false
+                            },
+                            pointStart: 2010
+                        }
+                    },
+
+                    series: [{
+                        name: 'Installation',
+                        data: seriesData
+                    }, {
+                        name: 'Manufacturing',
+                        data: seriesData
+                    }, {
+                        name: 'Sales & Distribution',
+                        data: seriesData
+                    }, {
+                        name: 'Project Development',
+                        data: seriesData
+                    }, {
+                        name: 'Other',
+                        data: seriesData
+                    }],
+
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 500
+                            },
+                            chartOptions: {
+                                legend: {
+                                    layout: 'horizontal',
+                                    align: 'center',
+                                    verticalAlign: 'bottom'
+                                }
+                            }
+                        }]
+                    }
+                });
+                // });
+
+            }, 3000);
+
+        });
+    </script>
+
+    <script src="../app.js"></script>
+</body>
+
+</html>
