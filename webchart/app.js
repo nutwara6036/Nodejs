@@ -29,39 +29,39 @@ request({
 })
 
 
+var https = require('https');
+var url = 'http://jsonplaceholder.typicode.com/users/1';
 
-// var url = 'http://jsonplaceholder.typicode.com/users/1';
+var options = {
+    host: url,
+    //path: '/users/rsp',
+    headers: { 'User-Agent': 'request' }
+};
 
-// var options = {
-//     host: url,
-//     //path: '/users/rsp',
-//     headers: { 'User-Agent': 'request' }
-// };
+https.get(options, function(res) {
+    var json = '';
+    res.on('data', function(chunk) {
+        json += chunk;
+    });
+    res.on('end', function() {
+        if (res.statusCode === 200) {
+            try {
+                var data = JSON.parse(json);
+                var test = JSON.stringify(json);
+                // data is available here:
+                //console.log(data.html_url);
+                console.log(test);
 
-// https.get(options, function(res) {
-//     var json = '';
-//     res.on('data', function(chunk) {
-//         json += chunk;
-//     });
-//     res.on('end', function() {
-//         if (res.statusCode === 200) {
-//             try {
-//                 var data = JSON.parse(json);
-//                 var test = JSON.stringify(json);
-//                 // data is available here:
-//                 //console.log(data.html_url);
-//                 console.log(test);
-
-//             } catch (e) {
-//                 console.log('Error parsing JSON!');
-//             }
-//         } else {
-//             console.log('Status:', res.statusCode);
-//         }
-//     });
-// }).on('error', function(err) {
-//     console.log('Error:', err);
-// });
+            } catch (e) {
+                console.log('Error parsing JSON!');
+            }
+        } else {
+            console.log('Status:', res.statusCode);
+        }
+    });
+}).on('error', function(err) {
+    console.log('Error:', err);
+});
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
