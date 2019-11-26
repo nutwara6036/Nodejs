@@ -1,15 +1,16 @@
 var app = require('express')();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var server = require('socket.io')(http);
 var mysql = require('mysql');
+var port = 3000;
 
 // set file 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
 
-var con = mysql.createConnection({
+var database = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
@@ -17,34 +18,51 @@ var con = mysql.createConnection({
 });
 
 
-con.connect(function (err) {
-    if (err) throw err;
-    console.log("Connected!");
-    var sql = "SELECT * FROM data WHERE temperature";
-    con.query(sql, function (err, result, fields) {
-        if (err) throw err;
-        console.log(result);
-
-        io.on('connection', function (socket) {
-            console.log('a user connected');
-            // alert connect 
-            socket.on('disconnect', function () {
-                console.log('user disconnected');
-            });
+database.connect(function(err) {
+    try {
+        //alert when connect
+        server.on('connection', function(socket) {
+            console.info(`Client connected [id=${socket.id}]`);
             // read message 
-            socket.on('chat message', function (msg) {
-                console.log('message: ' + msg);
+            socket.on('chat message', function(msg) {
+                console.log('message read: ' + msg);
+                let temperature = msg;
+                let pressure = msg;
+                let approx = msg;
+                let humidity = msg;
+                let sqlCommand = database.format('INSERT INTO `data`(`temperature`, `pressure`, `approx`, `humidity`) VALUES (?, ?, ?, ?)', [temperature, pressure, approx, humidity]);
+
+                database.query(sqlCommand, function(err, result, fields) {
+                    console.log(result);
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                });
+
+                // let sqlCommands = "SELECT * FROM data WHERE temperature";
+                // database.query(sqlCommands, function(err, result, fields) {
+                //     console.log(result);
+                //     //if (err) throw err;
+                //     if (err) {
+                //         console.log(err);
+                //         return;
+                //     }
+                // });
             });
             // Broadcasting
-            socket.on('chat message', function (msg) {
-                io.emit('chat message', msg);
+            socket.on('chat message', function(msg) {
+                server.emit('chat message', msg);
             });
         });
-    });
-
-
+        //alert when disconnect
+        server.on("disconnect", () => {
+            console.info(`Client Disconnect [id=${socket.id}]`);
+        });
+    } catch (err) {
+        console.log(err);
+    }
 });
-
-http.listen(3000, function () {
-    console.log('listening on *:3000');
+http.listen(port, function() {
+    console.info(`listening on *:${port}`);
 });
