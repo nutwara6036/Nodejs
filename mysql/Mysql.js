@@ -5,9 +5,9 @@ var mysql = require('mysql');
 var port = 3000;
 
 // set file 
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
+// app.get('/', function(req, res) {
+//     res.sendFile(__dirname + '/index.html');
+// });
 
 
 var database = mysql.createConnection({
@@ -26,19 +26,19 @@ database.connect(function(err) {
             // read message 
             socket.on('chat message', function(msg) {
                 console.log('message read: ' + msg);
-                let temperature = msg;
-                let pressure = msg;
-                let approx = msg;
-                let humidity = msg;
-                let sqlCommand = database.format('INSERT INTO `data`(`temperature`, `pressure`, `approx`, `humidity`) VALUES (?, ?, ?, ?)', [temperature, pressure, approx, humidity]);
+                // let temperature = msg;
+                // let pressure = msg;
+                // let approx = msg;
+                // let humidity = msg;
+                // let sqlCommand = database.format('INSERT INTO `data`(`temperature`, `pressure`, `approx`, `humidity`) VALUES (?, ?, ?, ?)', [temperature, pressure, approx, humidity]);
 
-                database.query(sqlCommand, function(err, result, fields) {
-                    console.log(result);
-                    if (err) {
-                        console.log(err);
-                        return;
-                    }
-                });
+                // database.query(sqlCommand, function(err, result, fields) {
+                //     console.log(result);
+                //     if (err) {
+                //         console.log(err);
+                //         return;
+                //     }
+                // });
 
                 // let sqlCommands = "SELECT * FROM data WHERE temperature";
                 // database.query(sqlCommands, function(err, result, fields) {
@@ -63,6 +63,7 @@ database.connect(function(err) {
         console.log(err);
     }
 });
+
 http.listen(port, function() {
     console.info(`listening on *:${port}`);
 });
