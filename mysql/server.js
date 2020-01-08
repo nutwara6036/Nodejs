@@ -68,8 +68,8 @@ database.connect(function(err) {
 
                     // socket.emit("auto", { "controls": controls, "check": humidity_checks });
                     socket.emit("auto", controls);
-                    socket.emit("switchs", switchs);
-                    //socket.emit("check", checks);
+                    socket.emit("switch", switchs);
+                    socket.emit("check", checks);
 
                 });
 
