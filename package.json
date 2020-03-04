@@ -15,6 +15,7 @@
         "browserify": "^16.5.0",
         "chart.js": "^2.9.2",
         "express": "^4.16.4",
+        "firebase-admin": "^5.13.1",
         "formidable": "^1.2.1",
         "highcharts": "^7.2.1",
         "keypress": "^0.2.1",

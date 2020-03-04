@@ -8,20 +8,21 @@ const functions = require('firebase-functions');
 const { WebhookClient } = require('dialogflow-fulfillment');
 const { Card, Suggestion } = require('dialogflow-fulfillment');
 
+
 admin.initializeApp({
     credential: admin.credential.cert({
         "type": "service_account",
-        "project_id": "ask-room-ppogai",
-        "private_key_id": "21615532a0b31b5ac53b39c7cbc76ed115420edf",
-        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDAv8bsQpAVpO5W\nSZtram+w51ar5AZuVQDOSXj/C35mLhOhG3PyXkbwPlqgZ/TWOUOwYuFG21pVT6TB\n8VnHuybyWCE7XVfA/983enQ5uliXwJbA5ptDiWMbvQJVJaXFCeiMB9lKdPkdcVso\ni4Qw7Xr0n3FUxJxnisoPx3d+cjsC6hBYxfu8PPTGJAhjJm3ArOCuMx0L/MxuwcTJ\nKfXyOkkE3ESneAQYcHweVFIcHV9EWZNOKOiS29iCySzHoTI2kIZ76O9BB4Zaqvtv\niZYvraNAnotTPR4BqdzDPcFHhAz/re0voGzkOt4Teq/2HiUvLj3xCn1BKVo6svs6\nPlreELpXAgMBAAECggEAO9eOr+1ehInHQVzq9ud9s8OvIgDSilCzxlgDS9PKs3ic\nuYknb1kb1xzU0DZWSmhO/qVEYdZabmAiu9/tytftGJKKBr9NLmuCZtwK151mQf8W\nDt/J1qcB8Su2XK8qj0krPMZ3DOnSKfT2o1jlerdQVEBoVDQShwcNAucfz08xyQ5N\nYtOUQT4XUYxEknYEx4YRobnsXXo06sFl1DnbDHoG4SwZODZ8jgFtYKryP4kvxmNy\nlld77xGfgufx3yAn/gUTbvLM2QENZFWykxgQJNQTR/LxRmdvEsZ0iGGXNOtw4hC8\nFVFAt4IzM493D7ITJK2zdgzRtYZLzGFbIPbdjHCcCQKBgQD8c/vx1JJkK0zSWIaY\nvcusfFa5l+xkYJbWvJ6hY/h+LRpUctTDJqXR+Fslw0zGMmLTo7lojYS8PaB+61kQ\nMSQPqL8dghLwCvM5JCoqv80cAisSQEP+ZmVLZug1sFCOm9VxGvNobo3rUOyqHyNO\nOTQ9r2qzzg20Tzvzfil80II67QKBgQDDdQ0vrW8L3BtwsDEytoXyYedIeSCYGvjP\nQPN3M5eeyq9527BRAVFVnFNMC/kOidB8716sxFyALMHaBXlTbWXnRGvDOqW+xPDB\nV0Eh7Gh1rfj2SGyEUgkgwacxcuhIYgnnXUSgZn2RuGSYlASuPKmdXgR+ch0t1NqL\njJklH4it0wKBgQDkYqVGJRH+zvFjxjSWD/YnaCEpK9jvAjbTs7YquX8/3tvYFD6J\nAfi3mOAUrLdTAphHcPG2NXkktvfwekeLj3lZNUcYkelCAhYB1sbS/8u2D/wZOcyJ\nZOc0rLdcgtKOAUq6VTBphMKdZQuF6D+Pb87kE0MLwVjCi3/oC3XK9fMrDQKBgQCc\n1Q0xlm4mDAUQlK/FS2OLKzeTlW2r3uiKFEnG+eTNC0Fl+/sr5GzIztifinPbUIWz\n2bYT1rOKPV+GeyHw6TT9Lo9xZVudCRVNbZ/bgoAG/QNpSo+YVOLyH7DyIotzmQbt\nWI86TUKwbE57hzmCPTa0CL5+Xz4+ii6aDsTLXtQi9QKBgQC/5AROYq93c28O9OjG\nojG4wtbX4sY7TnIQW6VFO+FOP7UoIq5cccak/T1uPtlaQ/teox3em0iuhxGvlxgu\n4hA9QptbrzTJg3XZPMTKkJybR8JHlB9AtriOdm17ro5I/OsGMeNuwS3IKkeKI8Dr\nm+P1DOyQXY273Be2gS6MlSECEg==\n-----END PRIVATE KEY-----\n",
-        "client_email": "firebase-adminsdk-wv17v@ask-room-ppogai.iam.gserviceaccount.com",
-        "client_id": "108821071321524697236",
+        "project_id": "plug-htjrgv",
+        "private_key_id": "426baae2ad0665fd7a567182167ff88ecf96c25c",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChCAm7hk58vWdo\nd47Pd9rIg9JknLO+7oA7mUt0CBQ/veLD2s4/VIzvwM3mR7htMcxwee0z4yXwuMBi\nWdwaFibc3/J0vjFGNLFHeuK6dzOOnV2G9Vf85P3Aqd101J3SwoYeL47XeUbL6HyG\nVUYf64l5s/l9KEt9lAuPahehfczC0VLkHkp112D2ShtXQj0yg/p03bkY5F7sJnJQ\n+mnF4+r64q1oEPkwti1jzQJRmlfMEn6HyGLmCoIR8SO5qKEC9cxYidHx/aTvj0sX\nWtYW6xJzxGUNN1og9DBRBQE8/yFqrRyLHeX5i+KyoZCFunX7H3wkgBH5TfMhs3ZI\n4BEfFiTHAgMBAAECggEACG3ZyJGesSPe8lZzyMNe1ekkjbSwKfnlB3meO/wiRzXi\n1VqyOhlsaS5f+MJfUoPtTiPruTAWL9QT6fIHNexb62rjj53XCXQ/pVy22ojbz4bI\nOwTDrs6zw66Ak5l/i2U4TQMzSG8mOA0623NCQPB82TyE/jqqPPAPbNniU8c4fSgP\nkd8llEHfE7jKtiiDeNVQlNZgTe+WKzfXT/8PohRCQ2OQUkhgwAtMoa5WumYCVQEU\nueovQDdA/ZJeq30+12kW0BNEjm2j21f0gm5GVBMaD3XUdEiK9mOcIi3kkFmIcumM\ngL2McfcJNEPDZKjTgFo3r5/QPPii87Zi49xX1pOERQKBgQDXlijlVeDxjlhx50gj\n4iRG9eb9pmO6UgoH5Pvrp9x28T0aGGKzxbshCT+t3RDhnJYmn6n+S2f7TAN6xsij\n3Le9p/CzETlOVDpY276fUtqjB7Y6VFeUCSmvuYBM8KPxHZRMBCVAEoeEjPlWcFHT\n5ygXK8u/1VV2Nl6w65UmO5BlZQKBgQC/N9DxzK9no1rjPOq3avTFNTzebEeMGjQb\nVPHL+kq9O8Upzatu1yU8Q6T+IlH2BD9Ifz2JU6qbm0DiwY3qEjX7M1Wma0sDvL2L\nL0ajK2MlifzvWYqSRWsq5rF2AYAbCYZCDA+BtVsRq/Jaz/Q+cNIKuYjcvBCsDleZ\nWtAIe8SEuwKBgQCYYZ/ocio8MyQa5qJcErUXnyo1cY2eHezPJbBXImA3hk5tCn2B\nmiqpsDLdfps3DQoopMRwZPZLbrAq8STShekt2e3NdEgwMGLJehEj5ll50LKiSglZ\nLpzTg2fHenQ2snSmwmtd/XriWw7GZT/BauswbZlnr6/njYiivvG+g22N7QKBgCvx\nktYOuPyzQM7aEALI1KmBe5SOA79BwlnJoqvCwGxOkRfzSQN28/qufPtePcGw5i4t\n96FYleueuUGjQ47YUomBGZzeKWYZeOHEopIbBXT6CiOjS0IkK+W3EG9TFvKftLf2\n95VSbTRZdJ/EDJhQ6yRF0RsRKS+xOBZpFUft0ZLDAoGAI3rqPs3qS2j/7JnqOppY\nlXrQqR1visb2XNycswgOoYlCJLkInmmFHhbg3RBHa/XjrBtzmd5kDEOK6svl706V\nLFdYOnBCCN7eYL5zNDhwmOVmN/JKYTXNjG8DEn4LmD6gGEmF+FJDdJV3izmi7F7j\noBHVHRMgc3p8rGgkU3da0oY=\n-----END PRIVATE KEY-----\n",
+        "client_email": "firebase-adminsdk-24bf5@plug-htjrgv.iam.gserviceaccount.com",
+        "client_id": "101298432071038212579",
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "token_uri": "https://oauth2.googleapis.com/token",
         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-wv17v%40ask-room-ppogai.iam.gserviceaccount.com"
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-24bf5%40plug-htjrgv.iam.gserviceaccount.com"
     }),
-    databaseURL: "https://ask-room-ppogai.firebaseio.com"
+    databaseURL: "https://plug-htjrgv.firebaseio.com"
 });
 
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
@@ -32,15 +33,23 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
     function bodyMassIndex(agent) {
-        let room = request.body.queryResult.parameters.number;
-        agent.add(`I didn't understand` + room.toString());
-        return admin.database().ref("/room/room1/").update({ led1: room }).then(_ => {
-            agent.add(`ห้อง` + room.toString());
+        let state = request.body.queryResult.parameters.number;
+        let result = "none";
+        agent.add(`I didn't understand` + state.toString());
+        return admin.database().ref("/PLUG/").update({ plug: state }).then(_ => {
+            if (state == 1) {
+                result = "เปิด";
+            } else {
+                result = "ปิด";
+            }
+            agent.add(`ปลั๊กได้ทำการ:` + result.toString());
         });
         //agent.add(`I'm sorry, can you try again?`);
     }
 
+    // Run the proper function handler based on the matched Dialogflow intent name
     let intentMap = new Map();
-    intentMap.set('ask-room - custom - yes', bodyMassIndex);
+    //intentMap.set('Default Welcome Intent', welcome);
+    intentMap.set('plug - custom - yes', bodyMassIndex);
     agent.handleRequest(intentMap);
 });
