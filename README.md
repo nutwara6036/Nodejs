@@ -57,10 +57,10 @@ Start Bootstrap is an open source library of free Bootstrap templates and themes
 -   highchart
 -   http	
 -   mysql
+<!-- 
+Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat). -->
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Reference 🔎 search
+## Reference
 
 Name API.com 
 -   <https://www.name.com/api-docs/>
