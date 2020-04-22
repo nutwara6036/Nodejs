@@ -20,13 +20,13 @@
 ## Download and Installation
 
 To begin using this template, choose one of the following options to get started:
-
--   [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/)
+<!-- 
+-   [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) -->
 -   Install via npm: `npm i `
 -   Clone the repo: `git clone `
--   [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
+<!-- -   [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2) -->
 
-## Usage
+<!-- ## Usage
 
 After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
@@ -42,7 +42,7 @@ You must have npm installed globally in order to use this build environment. Thi
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/). -->
 
 ## About
 
