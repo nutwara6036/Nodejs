@@ -1,23 +1,4 @@
-# Nodejs
-
-how to install packet 
-
-- npm install 
-
-Example
-- Api-json	
-- Api
-- Mlab	
-- Mongodb	
-- Socketio
-- chat	
-- highchart
-- http	
-- mysql
-
-
-
-# [Start Bootstrap - SB Admin 2](https://startbootstrap.com/template-overviews/sb-admin-2/)
+# [Node js 2](https://startbootstrap.com/template-overviews/sb-admin-2/)
 
 [SB Admin 2](https://startbootstrap.com/template-overviews/sb-admin-2/) is an open source admin dashboard theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
@@ -42,8 +23,8 @@ For the legacy Bootstrap 3 version of this theme, you can view the [last stable 
 To begin using this template, choose one of the following options to get started:
 
 -   [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/)
--   Install via npm: `npm i startbootstrap-sb-admin-2`
--   Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git`
+-   Install via npm: `npm i `
+-   Clone the repo: `git clone `
 -   [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
 
 ## Usage
