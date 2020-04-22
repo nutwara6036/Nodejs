@@ -78,46 +78,30 @@ Start Bootstrap is an open source library of free Bootstrap templates and themes
 -   http	
 -   mysql
 
--   <https://startbootstrap.com>
--   <https://twitter.com/SBootstrap>
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**.
-
--   <http://davidmiller.io>
--   <https://twitter.com/davidmillerskt>
--   <https://github.com/davidtmiller>
-
 Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-## Reference
+## Reference 🔎 search
 
 Name API.com 
-- 🔎 search
-- https://www.name.com/api-docs/
+-   <https://www.name.com/api-docs/>
 
 MongoDB
-- 🔎 search
-- http://mongodb.github.io
+-   <http://mongodb.github.io>
 
 Node.js MongoDB Driver API
-- 🔎 search
-- http://mongodb.github.io/node-mongodb-native/3.0/api/
+-   <http://mongodb.github.io/node-mongodb-native/3.0/api/>
 
 Express
-- 🔎 search
-- https://expressjs.com/en/starter/hello-world.html
+-   <https://expressjs.com/en/starter/hello-world.html>
 
 Node Js
-- 🔎 search
-- https://nodejs.org/api/synopsis.html
+-   <https://nodejs.org/api/synopsis.html>
 
 Socket.io
-- 🔎 search
-- https://socket.io/get-started/chat/
+-   <https://socket.io/get-started/chat/>
 
 javascript.info
-- 🔎 search
-- https://javascript.info/?fbclid=IwAR195YbvLlcZEbOXenGaOHmnOuxKuDD_N2JJAbFTmWnEmwFSVzyRiaMRT0c
+-   <https://javascript.info/?fbclid=IwAR195YbvLlcZEbOXenGaOHmnOuxKuDD_N2JJAbFTmWnEmwFSVzyRiaMRT0c>
 
 ## Copyright and License
 
