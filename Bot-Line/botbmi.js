@@ -2,7 +2,7 @@
 
 const functions = require("firebase-functions");
 const { WebhookClient } = require("dialogflow-fulfillment");
-const { Card, Suggestion } = require("dialogflow-fulfillment");
+const { Card, Suggestion, Payload } = require('dialogflow-fulfillment');
 
 const admin = require("firebase-admin");
 admin.initializeApp({
@@ -33,8 +33,13 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             result = "xl";
         }
 
+
+        // let payload = new Payload('LINE', payloadJson, { sendAsMessage: true });
+
         return admin.database().ref("bmi").child(result).once("value").then(snapshot => {
-            agent.add(snapshot.val());
+            // agent.add(payload);
+            agent.add(`ค่า BMI ของคุณคือ ` + bmi);
+            agent.add(`อยากจะบอกคุณว่า  ` + snapshot.val().toString());
         });
     }
 
