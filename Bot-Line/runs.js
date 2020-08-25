@@ -2,11 +2,11 @@
 var admin = require("firebase-admin");
 
 
-var serviceAccount = require("/xampp/htdocs/meu-sloccb-firebase-adminsdk-5wjmr-e7979d84a6.json");
+var serviceAccount = require("/xampp/htdocs/ggez-knmiei-firebase-adminsdk-btpsd-e1e6cab48c.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://meu-sloccb.firebaseio.com'
+    databaseURL: 'https://ggez-knmiei.firebaseio.com'
 });
 
 
