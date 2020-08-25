@@ -1,15 +1,10 @@
 "use strict";
 var admin = require("firebase-admin");
-
-
-var serviceAccount = require("/xampp/htdocs/ggez-knmiei-firebase-adminsdk-btpsd-e1e6cab48c.json");
-
+var serviceAccount = require("/xampp/htdocs/Nodejs/Bot-Line/ggez-knmiei-firebase-adminsdk-btpsd-e1e6cab48c.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://ggez-knmiei.firebaseio.com'
 });
-
-
 
 
 // admin.database().ref("menu/ขนม/hellox").set(0);
