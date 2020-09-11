@@ -61,9 +61,25 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                     `\n ชื่อแบบฟอร์ม : ` + snapshot.child("name").val().toString() +
                     `\n ความหมายแบบฟอร์ม : ` + snapshot.child("meaning").val().toString() +
                     `\n LINK : ` + snapshot.child("url").val().toString() +
-                    `\n คำแนะนำ : `);
-                snapshot.child("suggestion").val().split(',').forEach(element => {
-                    agent.add(` - ` + element);
+                    `\n กำหนดเวลาการส่งเอกสาร : ` + snapshot.child("datestart").val().toString() + ` ถึง ` + snapshot.child("dateend").val().toString());
+
+                // check date
+                let dateCheck = ("0" + new Date().getDate()).slice(-2) + "-" + ("0" + (new Date().getMonth() + 1)).slice(-2) + "-" + new Date().getFullYear();
+                let from = new Date(snapshot.child("datestart").val().toString().split("-")[2], parseInt(snapshot.child("datestart").val().toString().split("-")[1]) - 1, snapshot.child("datestart").val().toString().split("-")[0]);
+                let to = new Date(snapshot.child("dateend").val().toString().split("-")[2], parseInt(snapshot.child("dateend").val().toString().split("-")[1]) - 1, snapshot.child("dateend").val().toString().split("-")[0]);
+                let check = new Date(dateCheck.split("-")[2], parseInt(dateCheck.split("-")[1]) - 1, dateCheck.split("-")[0]);
+
+                if (check > from && check < to) {
+                    agent.add(`ยังอยู่ในช่วงเวลายื่นเอกสาร : ` + snapshot.child("datestart").val().toString() + ` ถึง ` + snapshot.child("dateend").val().toString());
+                } else if (snapshot.child("datestart").val().toString() == "-" && snapshot.child("dateend").val().toString() == "-") {
+                    agent.add(`สามารถยื่นเอกสารได้ตลอดปีการศึกษา`);
+                } else {
+                    agent.add(`หมดเวลายื่นเอกสาร`);
+                }
+
+                agent.add(`=== ขั้นตอนการดำเนินเอกสาร ===`);
+                snapshot.child("suggestion").val().split(',').forEach(function(element, indexs) {
+                    agent.add(indexs + `.` + element);
                 });
             }
         });

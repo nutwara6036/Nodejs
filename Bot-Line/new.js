@@ -1,17 +1,40 @@
 "use strict";
 var admin = require("firebase-admin");
+const request = require("request");
 // var serviceAccount = require("/xampp/htdocs/Nodejs/Bot-Line/ggez-knmiei-firebase-adminsdk-btpsd-e1e6cab48c.json");
 
 var serviceAccount = require("/xampp/htdocs/Nodejs/Bot-Line/petition-fqrs-firebase-adminsdk-4884g-a6c15544c0.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    // databaseURL: 'https://ggez-knmiei.firebaseio.com'
     databaseURL: 'https://petition-fqrs.firebaseio.com/'
 });
 
 
+
 // ox0csbot@gmail.com
+// ppp12345
 // por123456
+
+
+
+//  TEST 3
+// return admin.database().ref('documentNU/').on("child_added", function(snapshot) {
+//     if (snapshot.key == "NU-24") {
+
+//         let dateCheck = ("0" + new Date().getDate()).slice(-2) + "-" + ("0" + (new Date().getMonth() + 1)).slice(-2) + "-" + new Date().getFullYear();
+//         let from = new Date(snapshot.child("datestart").val().toString().split("-")[2], parseInt(snapshot.child("datestart").val().toString().split("-")[1]) - 1, snapshot.child("datestart").val().toString().split("-")[0]); // -1 because months are from 0 to 11
+//         let to = new Date(snapshot.child("dateend").val().toString().split("-")[2], parseInt(snapshot.child("dateend").val().toString().split("-")[1]) - 1, snapshot.child("dateend").val().toString().split("-")[0]);
+//         let check = new Date(dateCheck.split("-")[2], parseInt(dateCheck.split("-")[1]) - 1, dateCheck.split("-")[0]);
+
+//         if (check > from && check < to) {
+//             console.log(`ยังอยู่ในช่วงเวลาส่งเอกสาร : ` + snapshot.child("datestart").val().toString() + ` ถึง ` + snapshot.child("dateend").val().toString());
+//         } else if (snapshot.child("datestart").val().toString() == "-" && snapshot.child("dateend").val().toString() == "-") {
+//             console.log(`ยังไม่มีการกำหนดช่วงเวลา สามารถส่งได้ตลอดเวลา`);
+//         } else {
+//             console.log(`หมดเวลาส่งเอกสาร`);
+//         }
+//     }
+// });
 
 // TEST 2 
 // let documentid = 7;
@@ -92,14 +115,14 @@ admin.initializeApp({
 
 
 
-60310123
-60310192
-60310475
-60313926
-60314763
-60315180
-60315227
-61310863
-61311181
-61311266
-61311280
+// 60310123
+// 60310192
+// 60310475
+// 60313926
+// 60314763
+// 60315180
+// 60315227
+// 61310863
+// 61311181
+// 61311266
+// 61311280

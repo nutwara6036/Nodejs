@@ -1,0 +1,166 @@
+{
+  "id": "5aee1d97-962d-40de-b6ea-71859612990d",
+  "name": "Default Welcome Intent",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "input.welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "สวัสดีค่ะ",
+            "สบายดีไหมคะ"
+          ]
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "สวัสดี",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "1b5450d8-4102-422d-804e-3f591854b0f3",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "หวัดดีจ้ะ",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "e7181a0e-b23c-4602-b87d-9aaf419f6388",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "สวัสดีน้า",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f8b157a2-c43c-4461-8c2c-9e5b7435c7ca",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "ว่าไง",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "e14a71a7-2bce-421f-aea1-89caa911bc9f",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "สวีดัส",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "3740bc36-b5b5-43d4-a0ae-75e6473cd6eb",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "สวัสดีจ้ะ",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "676a2ac9-24b6-4800-8235-d6934dafe0e0",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "หวัดดีจ้า",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "49328fb4-e0a7-4720-a050-120f081ccc2a",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "ไม่เจอกันตั้งนาน",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f48a9808-7c49-4311-9118-af191f862d47",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "ขอทักทาย",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "b75fc3eb-1a9e-4f00-af3e-22728854ef95",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "หวัดดี",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "dbcda869-d4bd-463a-9e28-1dba3726b958",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}
