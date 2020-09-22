@@ -1,0 +1,101 @@
+{
+    "type": "bubble",
+    "hero": {
+        "type": "image",
+        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "action": {
+            "type": "uri",
+            "label": "Line",
+            "uri": "https://linecorp.com/"
+        }
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [{
+                "type": "text",
+                "text": "Super ",
+                "weight": "bold",
+                "size": "xl",
+                "contents": []
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "margin": "lg",
+                "contents": [{
+                        "type": "box",
+                        "layout": "baseline",
+                        "spacing": "sm",
+                        "contents": [{
+                                "type": "text",
+                                "text": "รายละเอียด",
+                                "size": "sm",
+                                "color": "#AAAAAA",
+                                "flex": 1,
+                                "contents": []
+                            },
+                            {
+                                "type": "text",
+                                "text": "กหด",
+                                "size": "sm",
+                                "color": "#666666",
+                                "align": "start",
+                                "wrap": true,
+                                "contents": []
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "spacing": "sm",
+                        "contents": [{
+                                "type": "text",
+                                "text": "ห้อง",
+                                "size": "sm",
+                                "color": "#AAAAAA",
+                                "flex": 1,
+                                "contents": []
+                            },
+                            {
+                                "type": "text",
+                                "text": "กดกด",
+                                "size": "sm",
+                                "color": "#666666",
+                                "align": "start",
+                                "gravity": "top",
+                                "contents": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "flex": 0,
+        "spacing": "sm",
+        "contents": [{
+                "type": "button",
+                "action": {
+                    "type": "message",
+                    "label": "จอง",
+                    "text": "จอง"
+                },
+                "color": "#FF8C8CFF",
+                "height": "sm"
+            },
+            {
+                "type": "spacer",
+                "size": "sm"
+            }
+        ]
+    }
+}
