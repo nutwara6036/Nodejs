@@ -12,6 +12,12 @@
 -   http	
 -   mysql
 
+Line bot PHP
+
+Noitfy for Project
+- MARK I JARVIS api.php 
+- MARK II MLAB apis.php 
+
 
 
 ## Status
@@ -29,14 +35,6 @@ To begin using this template, choose one of the following options to get started
 -   Install via npm: `npm i `
 -   Clone the repo: `git clone https://github.com/C4psL0cks/Nodejs `
 
-
-
-# LINE-BOT-PHP
-Line bot PHP
-
-Noitfy for Project
-- MARK I JARVIS api.php 
-- MARK II MLAB apis.php 
 
 # Reference
 
