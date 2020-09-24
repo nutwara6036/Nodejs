@@ -1,13 +1,9 @@
-# [Node js 2](https://startbootstrap.com/template-overviews/sb-admin-2/)
+# [Node js 2]
 
-เกี่ยวกับ nodejs
+## About
 
+Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
 
-<!-- ## Preview -->
-<!-- 
-[![SB Admin 2 Preview](https://startbootstrap.com/assets/img/screenshots/themes/sb-admin-2.png)](https://blackrockdigital.github.io/startbootstrap-sb-admin-2/)
-
-**[Launch Live Preview](https://blackrockdigital.github.io/startbootstrap-sb-admin-2/)** -->
 
 ## Status
 
@@ -20,34 +16,35 @@
 ## Download and Installation
 
 To begin using this template, choose one of the following options to get started:
-<!-- 
--   [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) -->
+
 -   Install via npm: `npm i `
--   Clone the repo: `git clone `
-<!-- -   [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2) -->
+-   Clone the repo: `git clone https://github.com/C4psL0cks/Nodejs `
 
-<!-- ## Usage
 
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
-### Gulp Tasks
+# LINE-BOT-PHP
+Line bot PHP
 
--   `gulp` the default task that builds everything
--   `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
--   `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
--   `gulp js` minifies the themes JS file
--   `gulp vendor` copies dependencies from node_modules to the vendor directory
+Noitfy for Project
+- MARK I JARVIS api.php 
+- MARK II MLAB apis.php 
 
-You must have npm installed globally in order to use this build environment. This theme was built using node v11.6.0 and the Gulp CLI v2.0.1. If Gulp is not running properly after running `npm install`, you may need to update node and/or the Gulp CLI locally.
+# Reference
+-----------------------------------------
+LINE Notify
+- 🔎 search
+- https://notify-bot.line.me/th/
 
-## Bugs and Issues
+LINE richmenumaker
+- 🔎 search
+- https://lineforbusiness.com/richmenumaker/
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/). -->
+LINE developers
+- 🔎 search
+- https://developers.line.biz/en/
 
-## About
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
-
+## Nodejs code
 -   Api-json	
 -   Api
 -   Mlab	
@@ -57,8 +54,6 @@ Start Bootstrap is an open source library of free Bootstrap templates and themes
 -   highchart
 -   http	
 -   mysql
-<!-- 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat). -->
 
 ## Reference
 
@@ -88,23 +83,3 @@ javascript.info
 Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-resume/blob/gh-pages/LICENSE) license.
 
 
-# LINE-BOT-PHP
-Line bot PHP
-
-Noitfy for Project
-- MARK I JARVIS api.php 
-- MARK II MLAB apis.php 
-
-# Reference
------------------------------------------
-LINE Notify
-- 🔎 search
-- https://notify-bot.line.me/th/
-
-LINE richmenumaker
-- 🔎 search
-- https://lineforbusiness.com/richmenumaker/
-
-LINE developers
-- 🔎 search
-- https://developers.line.biz/en/
