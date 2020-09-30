@@ -1,5 +1,6 @@
-var ss = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1yeIOR9mRUp5AewWNjFVyJUQHTWQggiI7FFNKp-dbD6E/edit");
-var sheet = ss.getSheetByName('แผ่น1');
+var linksheets = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1yeIOR9mRUp5AewWNjFVyJUQHTWQggiI7FFNKp-dbD6E/edit");
+var sheet = linksheets.getSheetByName('แผ่น1');
+var sheet2 = linksheets.getSheetByName('แจ้งซ่อม');
 
 function doPost(e) {
 
@@ -9,12 +10,15 @@ function doPost(e) {
     var array3 = [{}];
     var array4 = [{}];
     var array5 = [{}];
+    var array6 = [{}];
+
 
     var data = JSON.parse(e.postData.contents)
     var userMsg = data.originalDetectIntentRequest.payload.data.message.text;
 
     // var userMsg = "19 ก.ย 63";
     // var userMsg = "จองห้องหมายเลข 3 วันที่ 2 ก.ย 63";
+    // var userMsg = "แจ้งซ้อมห้อง 1 ประตูพัง 0907487359";
 
     array0 = userMsg.split(" ")[0];
     array1 = userMsg.split(" ")[1];
@@ -22,16 +26,16 @@ function doPost(e) {
     array3 = userMsg.split(" ")[3];
     array4 = userMsg.split(" ")[4];
     array5 = userMsg.split(" ")[5];
+    array6 = userMsg.split(" ")[6];
 
     // search
     var search_msg = sheet.getRange(2, 1, sheet.getLastRow()).getValues();
     for (var i = 0; i < search_msg.length; i++) {
-        if (search_msg[i][0] == array0) {
+        if (search_msg[i][0] == array0) { // message form line 
 
-            date = sheet.getRange(i + 2, 1).getValue();
-            //  console.log(date);
-            var emtyroom = sheet.getRange(i + 2, 11).getValue();
-            //  console.log(emtyroom);
+            var date = sheet.getRange(i + 2, 1).getValue(); // วันที่
+            var detail = sheet.getRange(i + 2, 2).getValue(); // ข้อมูลห้อง เลือกใส่ได้ตามใจ
+            var emtyroom = sheet.getRange(i + 2, 11).getValue(); // จำนวนห้องว่าง
             var result = {
                 "fulfillmentMessages": [{
                     "platform": "line",
@@ -68,7 +72,7 @@ function doPost(e) {
         }
     }
 
-    // เลือกห้องวันที่ 19 ก.ย 63
+    // เลือกห้องวันที่ 19 ก.ย 63 --> array0.array1.array2.array3
     if (array0 == "เลือกห้องวันที่") {
         var values = sheet.getRange(2, 1, sheet.getLastRow(), sheet.getLastColumn()).getValues();
         for (var i = 0; i < values.length; i++) {
@@ -90,7 +94,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 1 วันที่ " + array1 + " " + array2 + " " + array3 // day mount year
+                                                "text": "จองห้องหมายเลข 1 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 3).getValue() // day mou year
                                             }]
                                         },
                                         {
@@ -100,7 +104,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 2 วันที่ " + array1 + " " + array2 + " " + array3
+                                                "text": "จองห้องหมายเลข 2 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 4).getValue()
                                             }]
                                         },
                                         {
@@ -110,7 +114,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 3 วันที่ " + array1 + " " + array2 + " " + array3
+                                                "text": "จองห้องหมายเลข 3 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 5).getValue()
                                             }]
                                         },
                                         {
@@ -120,7 +124,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 4 วันที่ " + array1 + " " + array2 + " " + array3
+                                                "text": "จองห้องหมายเลข 4 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 6).getValue()
                                             }]
                                         },
                                         {
@@ -130,7 +134,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 5 วันที่ " + array1 + " " + array2 + " " + array3
+                                                "text": "จองห้องหมายเลข 5 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 7).getValue()
                                             }]
                                         },
                                         {
@@ -140,7 +144,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 6 วันที่ " + array1 + " " + array2 + " " + array3
+                                                "text": "จองห้องหมายเลข 6 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 8).getValue()
                                             }]
                                         },
                                         {
@@ -150,7 +154,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 7 วันที่ " + array1 + " " + array2 + " " + array3
+                                                "text": "จองห้องหมายเลข 7 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 9).getValue()
                                             }]
                                         },
                                         {
@@ -160,7 +164,7 @@ function doPost(e) {
                                             "actions": [{
                                                 "type": "message",
                                                 "label": "จอง",
-                                                "text": "จองห้องหมายเลข 8 วันที่ " + array1 + " " + array2 + " " + array3
+                                                "text": "จองห้องหมายเลข 8 วันที่ " + array1 + " " + array2 + " " + array3 + " " + sheet.getRange(i + 2, 10).getValue()
                                             }]
                                         }
                                     ]
@@ -177,13 +181,13 @@ function doPost(e) {
         }
     }
 
-    // จองห้องหมายเลข 1 วันที่ 1 ก.ย 63
-    if (array0 == "จองห้องหมายเลข") {
+    // จองห้องหมายเลข 1 วันที่ 1 ก.ย 63 --> array0.array1.array2.array3.array4.array5.array6
+    if (array0 == "จองห้องหมายเลข" && array6 == "ว่าง") {
         var values = sheet.getRange(2, 1, sheet.getLastRow(), sheet.getLastColumn()).getValues();
         for (var i = 0; i < values.length; i++) {
-            if (values[i][0] == array3) { // วันที่ 3
-                if (array1 == "1") {
-                    sheet.getRange(i + 2, 3).setValue("รอ").setBackground('red');
+            if (values[i][0] == array3) { // date
+                if (array1 == "1") { // room
+                    sheet.getRange(i + 2, 3).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -212,7 +216,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -223,6 +227,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -230,7 +247,7 @@ function doPost(e) {
                         }]
                     }
                 } else if (array1 == "2") {
-                    sheet.getRange(i + 2, 4).setValue("รอ").setBackground('red');
+                    sheet.getRange(i + 2, 4).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -259,7 +276,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -270,6 +287,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -277,7 +307,7 @@ function doPost(e) {
                         }]
                     }
                 } else if (array1 == "3") {
-                    sheet.getRange(i + 2, 5).setValue("รอ").setBackground('red');
+                    sheet.getRange(i + 2, 5).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -306,7 +336,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -317,6 +347,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -324,7 +367,7 @@ function doPost(e) {
                         }]
                     }
                 } else if (array1 == "4") {
-                    sheet.getRange(i + 2, 6).setValue("รอ").setBackground('red');
+                    sheet.getRange(i + 2, 6).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -353,7 +396,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -364,6 +407,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -371,7 +427,7 @@ function doPost(e) {
                         }]
                     }
                 } else if (array1 == "5") {
-                    sheet.getRange(i + 2, 7).setValue("รอ").setBackground('red');
+                    sheet.getRange(i + 2, 7).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -400,7 +456,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -411,6 +467,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -418,7 +487,7 @@ function doPost(e) {
                         }]
                     }
                 } else if (array1 == "6") {
-                    sheet.getRange(i + 2, 8).setValue("รอ").setBackground('red');
+                    sheet.getRange(i + 2, 8).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -447,7 +516,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -458,6 +527,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -465,7 +547,7 @@ function doPost(e) {
                         }]
                     }
                 } else if (array1 == "7") {
-                    sheet.getRange(i + 2, 9).setValue("รอ").setBackground('red');
+                    sheet.getRange(i + 2, 9).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -494,7 +576,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -505,6 +587,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -512,7 +607,7 @@ function doPost(e) {
                         }]
                     }
                 } else if (array1 == "8") {
-                    sheet.getRange(i + 2, 10).setValue("รอ").setBackground('red');
+                    sheet.getRange(i + 2, 10).setValue("รอชำระเงิน").setBackground('red');
                     var result = {
                         "fulfillmentMessages": [{
                             "platform": "line",
@@ -541,7 +636,7 @@ function doPost(e) {
                                                 },
                                                 {
                                                     "type": "text",
-                                                    "text": "วันที่เข้าพัก " + array1 + " " + array2 + " " + array3,
+                                                    "text": "วันที่เข้าพัก " + array3 + " " + array4 + " " + array5,
                                                     "size": "sm",
                                                     "color": "#AAAAAA"
                                                 },
@@ -552,6 +647,19 @@ function doPost(e) {
                                                     "color": "#AAAAAA"
                                                 }
                                             ]
+                                        },
+                                        "footer": {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [{
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แจ้งชำระเงิน",
+                                                    "text": "แจ้งชำระเงินห้อง " + array1 + " วันที่ " + array3 + " " + array4 + " " + array5
+                                                }
+                                            }]
                                         }
                                     }
                                 }
@@ -563,6 +671,292 @@ function doPost(e) {
                 return replyJSON;
             }
         }
+    } else if (array0 == "จองห้องหมายเลข" && array6 != "ว่าง") { // รอ รอเข้าพัก ไม่ว่าง
+        var result = {
+            "fulfillmentMessages": [{
+                    "platform": "line",
+                    "type": 4,
+                    "payload": {
+                        "line": {
+                            "type": "text",
+                            "text": "ไม่สมารถจองห้องหมายเลข " + array1 + " ได้ ห้อง" + array6 + "ค่ะ"
+                        }
+                    }
+                },
+                {
+                    "platform": "line",
+                    "type": 4,
+                    "payload": {
+                        "line": {
+                            "type": "sticker",
+                            "packageId": "2",
+                            "stickerId": "179"
+                        }
+                    }
+                }
+            ]
+        }
+        var replyJSON = ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+        return replyJSON;
     }
+
+    // ชำระเงิน
+    // แจ้งชำระเงินห้อง 1 วันที่ 1 ก.ย 63 --> array0.array1.array2.array3.array4.array5
+    if (array0 == "แจ้งชำระเงินห้อง") {
+        var values = sheet.getRange(2, 1, sheet.getLastRow(), sheet.getLastColumn()).getValues();
+        for (var i = 0; i < values.length; i++) {
+            if (values[i][0] == array3) { // date
+                if (array1 == "1") { // room
+                    sheet.getRange(i + 2, 3).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                } else if (array1 == "2") {
+                    sheet.getRange(i + 2, 4).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                } else if (array1 == "3") {
+                    sheet.getRange(i + 2, 5).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                } else if (array1 == "4") {
+                    sheet.getRange(i + 2, 6).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                } else if (array1 == "5") {
+                    sheet.getRange(i + 2, 7).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                } else if (array1 == "6") {
+                    sheet.getRange(i + 2, 8).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                } else if (array1 == "7") {
+                    sheet.getRange(i + 2, 9).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                } else if (array1 == "8") {
+                    sheet.getRange(i + 2, 10).setValue("รอเข้าพัก").setBackground('green');
+                    var result = {
+                        "fulfillmentMessages": [{
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "text",
+                                        "text": "แจ้งชำระเงินเรียบร้อยแล้ว"
+                                    }
+                                }
+                            },
+                            {
+                                "platform": "line",
+                                "type": 4,
+                                "payload": {
+                                    "line": {
+                                        "type": "sticker",
+                                        "packageId": "2",
+                                        "stickerId": "179"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+                var replyJSON = ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+                return replyJSON;
+            }
+        }
+    }
+
+    // แจ้งซ่อม
+    // แจ้งซ้อมห้อง 1 ประตูพัง 0907487359 --> array0.array1.array2.array3
+    if (array0 == "แจ้งซ่อมห้อง" && array1 != " " && array2 != " " && array3 != " ") {
+
+        var values = sheet2.getRange(2, 1, sheet2.getLastRow(), sheet2.getLastColumn()).getValues();
+        sheet2.getRange(values.length + 1, 1).setValue(array1); // id room
+        sheet2.getRange(values.length + 1, 2).setValue(array2); // detail
+        sheet2.getRange(values.length + 1, 3).setValue(array3); // phone
+
+        var result = {
+            "fulfillmentMessages": [{
+                    "platform": "line",
+                    "type": 4,
+                    "payload": {
+                        "line": {
+                            "type": "text",
+                            "text": "เพิ่มข้อมูลเรียบร้อยแล้ว"
+                        }
+                    }
+                },
+                {
+                    "platform": "line",
+                    "type": 4,
+                    "payload": {
+                        "line": {
+                            "type": "sticker",
+                            "packageId": "2",
+                            "stickerId": "179"
+                        }
+                    }
+                }
+            ]
+        }
+        var replyJSON = ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+        return replyJSON;
+    }
+
 
 }
