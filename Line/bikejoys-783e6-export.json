@@ -1,0 +1,120 @@
+{
+  "news" : [ {
+    "detial" : "tester",
+    "shopkey" : "key",
+    "time" : -1536115212972,
+    "title" : "testnews1",
+    "url" : "https://blog.traveloka.com/th/wp-content/uploads/sites/5/2018/08/%E0%B8%AA%E0%B8%B8%E0%B9%82%E0%B8%82%E0%B8%97%E0%B8%B1%E0%B8%A2.jpg"
+  }, {
+    "detial" : "ธุรกิจดูแลความงามที่ให้บริการ สปามือ สปาเท้า ต่อเล็บ เพ้นท์เล็บ นวดหน้า  สักคิ้ว ต่อขนตา แว๊กซ์ และ พาราฟิน  ภายใต้คอนเซ็ปต์",
+    "shopkey" : "key",
+    "time" : -1536115202455,
+    "title" : "testnews",
+    "url" : "https://www.paiduaykan.com/travel/wp-content/uploads/2017/06/%E0%B8%9B%E0%B8%81%E0%B8%AA%E0%B8%B8%E0%B9%82%E0%B8%82%E0%B8%97%E0%B8%B1%E0%B8%A2.jpg"
+  } ],
+  "promotion" : [ {
+    "detial" : "ผ่อนคลายไปกับโปรโมชั่นสุดพิเศษ สปาบุฟเฟ่ต์ ด้วยแพ็คเกจนวด 2 ชั่วโมง สำหรับ 2 ท่าน",
+    "discount" : 10,
+    "expire" : 1536685200000,
+    "img" : "https://my.kapook.com/imagescontent/fb_img/200/s_86939_3067.jpg",
+    "name" : "ก๋วยเตี๋ยวเรือ 01",
+    "shopname" : "ก๋วยเตี๋ยวเรือ 01",
+    "tel" : "055834483"
+  }, {
+    "detial" : "ส่วนลด เข้าใช้บริการ 10 ชั่วโมง รับฟรีทันที 1 ชั่วโมง",
+    "discount" : 20,
+    "expire" : 1581613200000,
+    "img" : "https://ed.edtfiles-media.com/static-cache/resize-cache/790x528/ud/images/1/22/65059/B64A5378_Cover.jpg",
+    "name" : "ก๋วยเตี๋ยวเรือ 02",
+    "shopkey" : "-LLdbJwOqyoHWSnpPdMJ",
+    "shopname" : "ก๋วยเตี๋ยวเรือ 02",
+    "tel" : 955677652
+  } ],
+  "shop" : [ {
+    "address" : "Tha Pho, Mueang Phitsanulok District, Phitsanulok 650000",
+    "distance" : 2.36567931638773,
+    "img" : "https://www.chillpainai.com/src/wewakeup/scoop/images/2c2e6b2f09da2cdbb7cbba49c2f13be2f11f98bb.jpg",
+    "location" : {
+      "lat" : 16.7626383,
+      "lng" : 100.1968334
+    },
+    "name" : "เมืองเก่า",
+    "open" : {
+      "day" : "ทุกวัน",
+      "time" : "10:00 - 12:00"
+    },
+    "shopkey" : "-LLTOnUR05Iifd2hoipb",
+    "star" : {
+      "point" : 53,
+      "visiter" : 11
+    },
+    "tel" : "081 046 3049"
+  }, {
+    "address" : "สีหราชเดโชชัย, ภายในปั้มปตท สีหราช ชั้น2อาคารติ่มซำ, Wat Chan, เมืองพิษณุโลก, Phitsanulok 65000",
+    "distance" : 9.310126594742261,
+    "img" : "https://cms.dmpcdn.com/travel/2020/02/01/2c727f20-44d7-11ea-ae38-73538266b6f9_original.jpg",
+    "location" : {
+      "lat" : 16.8217511,
+      "lng" : 100.2344875
+    },
+    "name" : "วัดศรีชุม",
+    "open" : {
+      "day" : "ทุกวัน",
+      "time" : "10:00 - 12:00"
+    },
+    "shopkey" : "-LLTP88EJJC0LLMcnZ9N",
+    "star" : {
+      "point" : 53,
+      "visiter" : 11
+    },
+    "tel" : "055 000 114"
+  }, {
+    "address" : "สีหราชเดโชชัย, ภายในปั้มปตท สีหราช ชั้น2อาคารติ่มซำ, Wat Chan, เมืองพิษณุโลก, Phitsanulok 65000",
+    "distance" : 9.310126594742261,
+    "img" : "https://cms.dmpcdn.com/travel/2020/02/01/2c727f20-44d7-11ea-ae38-73538266b6f9_original.jpg",
+    "location" : {
+      "lat" : 16.8217511,
+      "lng" : 100.2344875
+    },
+    "name" : "วัดศรีชุม",
+    "open" : {
+      "day" : "ทุกวัน",
+      "time" : "10:00 - 12:00"
+    },
+    "shopkey" : "-LLTP88EJJC0LLMcnZ9N",
+    "star" : {
+      "point" : 53,
+      "visiter" : 11
+    },
+    "tel" : "055 000 114"
+  }, {
+    "address" : "สีหราชเดโชชัย, ภายในปั้มปตท สีหราช ชั้น2อาคารติ่มซำ, Wat Chan, เมืองพิษณุโลก, Phitsanulok 65000",
+    "distance" : 9.310126594742261,
+    "img" : "https://cms.dmpcdn.com/travel/2020/02/01/2c727f20-44d7-11ea-ae38-73538266b6f9_original.jpg",
+    "location" : {
+      "lat" : 16.8217511,
+      "lng" : 100.2344875
+    },
+    "name" : "วัดศรีชุม",
+    "open" : {
+      "day" : "ทุกวัน",
+      "time" : "10:00 - 12:00"
+    },
+    "shopkey" : "-LLTP88EJJC0LLMcnZ9N",
+    "star" : {
+      "point" : 53,
+      "visiter" : 11
+    },
+    "tel" : "055 000 114"
+  } ],
+  "user" : {
+    "wOfbPtJD5WaHW9PgVvDMXjQIhWF3" : {
+      "email" : "tester@tester.com",
+      "gender" : "male",
+      "password" : "123456",
+      "phone" : "0907487359",
+      "uid" : "wOfbPtJD5WaHW9PgVvDMXjQIhWF3",
+      "username" : "Chanok Wogthinpa"
+    }
+  }
+}

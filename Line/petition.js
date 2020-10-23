@@ -3,7 +3,7 @@ var admin = require("firebase-admin");
 const request = require("request");
 // var serviceAccount = require("/xampp/htdocs/Nodejs/Bot-Line/ggez-knmiei-firebase-adminsdk-btpsd-e1e6cab48c.json");
 
-var serviceAccount = require("/xampp/htdocs/Nodejs/Bot-Line/petition-fqrs-firebase-adminsdk-4884g-a6c15544c0.json");
+var serviceAccount = require("/xampp/htdocs/Nodejs/Line/petition-fqrs-firebase-adminsdk-4884g-a6c15544c0.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://petition-fqrs.firebaseio.com/'
@@ -15,6 +15,11 @@ admin.initializeApp({
 // ppp12345
 // por123456
 
+admin.database().ref('documentNU/').on("child_added", function(snapshot) {
+    // if (snapshot.key == "NU-24") {
+    console.log(snapshot.val());
+    // }
+});
 
 
 //  TEST 3
