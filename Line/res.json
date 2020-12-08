@@ -1,0 +1,33 @@
+{
+    "textPayload": {
+        "responseId": "b50b5820-e3cf-4c6a-a412-dae2b3726dc2-b87e6a39",
+        "queryResult": {
+            "queryText": "ใช่",
+            "action": "Dask.Dask-custom",
+            "parameters": {
+                "ask": "ใช่"
+            },
+            "allRequiredParamsPresent": true,
+            "fulfillmentText": "โอเค",
+            "fulfillmentMessages": [{
+                    "text": {
+                        "text": ["โอเค"]
+                    },
+                    "platform": "LINE"
+                },
+                {
+                    "text": {
+                        "text": ["โอเค"]
+                    }
+                }
+            ],
+            "outputContexts": [{ "name": "projects/covid19-xuue/agent/sessions/4d978025-4cc2-38f4-82c7-5d442b05f4d8/contexts/dask-custom-followup", "lifespanCount": 2, "parameters": { "ask": "ใช่", "ask.original": "ใช่" } }, { "name": "projects/covid19-xuue/agent/sessions/4d978025-4cc2-38f4-82c7-5d442b05f4d8/contexts/dask-followup", "parameters": { "ask": "ใช่", "ask.original": "ใช่" } }, { "name": "projects/covid19-xuue/agent/sessions/4d978025-4cc2-38f4-82c7-5d442b05f4d8/contexts/__system_counters__", "parameters": { "no-input": 0, "no-match": 0, "ask": "ใช่", "ask.original": "ใช่" } }],
+            "intent": { "name": "projects/covid19-xuue/agent/intents/0a996636-c10c-483f-a5c0-41296102e062", "displayName": "Dask - custom" },
+            "intentDetectionConfidence": 1,
+            "languageCode": "th"
+        },
+        "originalDetectIntentRequest": { "source": "line", "payload": { "data": { "timestamp": "1607439312189", "type": "message", "source": { "type": "user", "userId": "U251e557c9d2b06e684914012b0320584" }, "message": { "type": "text", "text": "ใช่", "id": "13168215855575" }, "replyToken": "4c33307756114be8bda2cf5481725978" } } },
+        "session": "projects/covid19-xuue/agent/sessions/4d978025-4cc2-38f4-82c7-5d442b05f4d8"
+    }
+
+}
